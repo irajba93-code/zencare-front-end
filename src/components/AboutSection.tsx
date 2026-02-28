@@ -16,15 +16,15 @@ const AboutSection = () => {
     <section id="about" className="py-20 md:py-28">
       <div ref={ref} className="fade-in-section container mx-auto px-4 lg:px-8">
         <div className="grid items-center gap-12 md:grid-cols-2">
-          {/* Photo placeholder */}
-          <div className="flex justify-center">
+          {/* Photo placeholder — on mobile shown above text via order */}
+          <div className="order-1 flex justify-center md:order-none">
             <div className="flex h-72 w-56 items-center justify-center rounded-2xl bg-secondary md:h-96 md:w-72">
               <User size={64} className="text-muted-foreground/40" />
             </div>
           </div>
 
-          {/* Info */}
-          <div>
+          {/* Info — on mobile below image */}
+          <div className="order-2 md:order-none">
             <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
               Dr. Michael Carter, DC
             </h2>

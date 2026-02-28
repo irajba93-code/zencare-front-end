@@ -82,9 +82,9 @@ Implementation plan for the improvements brainstormed for the ZenCare chiropract
 
 | # | Task | Status |
 |---|------|--------|
-| 8.1 | Add theme toggle (light/dark) and wire to existing `.dark` CSS variables | [ ] |
-| 8.2 | Optionally strengthen aurora glow on hero for more impact (or leave as-is) | [ ] |
-| 8.3 | On mobile About section: consider showing doctor image above text | [ ] |
+| 8.1 | Add theme toggle (light/dark) and wire to existing `.dark` CSS variables | [x] |
+| 8.2 | Optionally strengthen aurora glow on hero for more impact (or leave as-is) | [x] |
+| 8.3 | On mobile About section: consider showing doctor image above text | [x] |
 
 ---
 
