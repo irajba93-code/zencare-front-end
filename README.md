@@ -1,73 +1,106 @@
-# Welcome to your Lovable project
+# ZenCare Front-End (Physiotherapy & Wellness Platform)
 
-## Project info
+Welcome to the **ZenCare** front-end repository. ZenCare is a modern web application designed for ZenCare Physiotherapy & Wellness, allowing clients to learn about services, manage bookings, and consult with physiotherapy experts.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+---
 
-## How can I edit this code?
+## 🚀 Technology Stack
 
-There are several ways of editing your application.
+This project is built using a modern, type-safe, and highly performant front-end stack:
 
-**Use Lovable**
+*   **Framework:** [React 18](https://react.dev/) (Functional components, Hooks)
+*   **Build Tool & Dev Server:** [Vite](https://vitejs.dev/) (SWC compiler for ultra-fast builds)
+*   **Language:** [TypeScript](https://www.typescriptlang.org/) (Strict type-checking)
+*   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+*   **UI Components:** [shadcn/ui](https://ui.shadcn.com/) (Radix UI primitives for accessible, unstyled foundation)
+*   **State & Query Management:** [TanStack React Query (v5)](https://tanstack.com/query/latest) (Server state synchronization)
+*   **Routing:** [React Router DOM (v6)](https://reactrouter.com/) (Client-side routing)
+*   **Backend Integration:** [Supabase](https://supabase.com/) (Authentication, Database PostgreSQL, RLS Policies, Edge Functions)
+*   **Icons:** [Lucide React](https://lucide.dev/)
+*   **Testing:** [Vitest](https://vitest.dev/) (Unit and component tests)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🛠️ Project Structure
 
-**Use your preferred IDE**
+The project directory is structured as follows:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```text
+├── Implementation/          # Implementation docs, database schemas, and trigger definitions
+├── public/                  # Static assets (images, logos, opengraph-image.png, etc.)
+├── src/
+│   ├── components/          # Reusable UI components (buttons, dialogs, sections, layouts)
+│   │   └── ui/              # Auto-generated shadcn base components
+│   ├── hooks/               # Custom React hooks (e.g., toast hooks)
+│   ├── lib/                 # Shared utilities, client configurations (e.g., supabaseClient)
+│   ├── pages/               # Main page/route entrypoints (Index.tsx, NotFound.tsx)
+│   ├── App.tsx              # Main entrypoint routing configuration
+│   ├── index.css            # Global CSS variables, custom Tailwind utilities
+│   └── main.tsx             # ReactDOM bootstrapper
+├── package.json             # Core dependency management
+└── tsconfig.json            # TypeScript configuration
 ```
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🏁 Getting Started
 
-**Use GitHub Codespaces**
+### Prerequisites
+Make sure you have [Node.js](https://nodejs.org/) installed (LTS recommended) or [Bun](https://bun.sh/) package manager.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### 1. Installation
+Clone the repository and install the dependencies:
 
-## What technologies are used for this project?
+```bash
+# Using npm
+npm install
 
-This project is built with:
+# Or using Bun (preferred/supported lockfile exists)
+bun install
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### 2. Run Development Server
+Start the development server with hot-reload:
 
-## How can I deploy this project?
+```bash
+# Using npm
+npm run dev
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+# Or using Bun
+bun run dev
+```
+Open `http://localhost:5173` to preview the site locally.
 
-## Can I connect a custom domain to my Lovable project?
+### 3. Run Tests
+Verify application functionality with Vitest:
 
-Yes, you can!
+```bash
+# Using npm
+npm run test
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+# Or using Bun
+bun test
+```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+### 4. Build for Production
+Create an optimized production build of the static application files:
+
+```bash
+# Using npm
+npm run build
+
+# Or using Bun
+bun run build
+```
+
+---
+
+## 🔒 Backend & Database Integration (Supabase)
+
+This front-end interacts directly with a **Supabase** backend:
+*   **Authentication:** Supabase Auth handles client signups, logins, and role administration.
+*   **Database Schema:** Contains tables for `profiles`, `bookings`, `sessions`, `booking_status_history`, and auditing.
+*   **Row Level Security (RLS):** Secures client details, restricting sensitive operations to authenticated users or administrators.
+*   **Triggers:** Automates database events (e.g., upgrading a profile from `'user'` to `'client'` upon their first confirmed booking).
+
+For detailed database schemas and triggers, refer to the [IMPLEMENTATION_IMPROVEMENT.md](file:///Users/admin/Anti%20Gravity%20Repository%20Destination/zencare-front-end/Implementation/IMPLEMENTATION_IMPROVEMENT.md) documentation.
